@@ -10,6 +10,9 @@ const MoviesSchema = new mongoose.Schema({
     },
     Image:{
         type:String
+    },
+    Link:{
+        type:String
     }
 })
 module.exports = mongoose.model("movies",MoviesSchema);

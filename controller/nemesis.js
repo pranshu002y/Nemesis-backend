@@ -6,9 +6,9 @@ const AuthService = require('../services/auth.service');
 const AuthServiceInstance = new AuthService()
 
 const movie = async(req,res) =>{
-    const {Title,Category,Image} = req.body;
+    const {Title,Category,Image,Link} = req.body;
     try{
-        const newMovie = await AuthServiceInstance.createMovie(Title,Category,Image);
+        const newMovie = await AuthServiceInstance.createMovie(Title,Category,Image,Link);
         res.json(newMovie);
     }
     catch(err){
@@ -19,9 +19,9 @@ const movie = async(req,res) =>{
 
 
 const dress = async(req,res) =>{
-    const {Title,category,Image} = req.body;
+    const {Title,category,Image,Link} = req.body;
     try{
-        const newDress = await AuthServiceInstance.createDress(Title,category,Image);
+        const newDress = await AuthServiceInstance.createDress(Title,category,Image,Link);
         res.json(newDress);
     }
     catch(err){
@@ -31,9 +31,9 @@ const dress = async(req,res) =>{
 };
 
 const games = async(req,res)=>{
-    const {Title,Category,Image} = req.body;
+    const {Title,Category,Image,Link} = req.body;
     try{
-        const newGames = await AuthServiceInstance.createGame(Title,Category,Image);
+        const newGames = await AuthServiceInstance.createGame(Title,Category,Image,Link);
         res.json(newGames);
     }
     catch(err){

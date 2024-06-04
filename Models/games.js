@@ -10,6 +10,9 @@ const GamesSchema = new mongoose.Schema({
     },
     Image:{
         type:String
+    },
+    Link:{
+        type:String
     }
 })
 module.exports = mongoose.model("games",GamesSchema);

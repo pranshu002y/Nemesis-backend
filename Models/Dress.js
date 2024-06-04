@@ -9,6 +9,9 @@ const DressSchema = new mongoose.Schema({
     },
     Image:{
         type:String
+    },
+    Link:{
+        type:String
     }
 })
 
