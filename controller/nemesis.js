@@ -66,10 +66,10 @@ const moviedata = async(req,res)=>{
 const gamesdata = async(req,res)=>{
     try{
         const gdata = await GamesModel.find({});
-        res.status(200).json(mdata);
+        res.status(200).json(gdata);
     }
     catch(err){
-        res.status(400).json({message: "not able to find movie"});
+        res.status(400).json({message: "not able to find game"});
     }
 }
 
