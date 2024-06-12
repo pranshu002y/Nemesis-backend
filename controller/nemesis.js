@@ -19,9 +19,9 @@ const movie = async(req,res) =>{
 
 
 const dress = async(req,res) =>{
-    const {Title,category,Image,Link} = req.body;
+    const {Title,Category,Image,Link} = req.body;
     try{
-        const newDress = await AuthServiceInstance.createDress(Title,category,Image,Link);
+        const newDress = await AuthServiceInstance.createDress(Title,Category,Image,Link);
         res.json(newDress);
     }
     catch(err){
@@ -42,4 +42,14 @@ const games = async(req,res)=>{
     }
 }
 
-module.exports = {movie,dress,games};
+const dressdata = async(req,res)=>{
+    try{
+        const data = await DressModel.find({});
+        res.status(200).json(data);
+    }
+    catch(err){
+        res.status(400).json({message: "not able to find data"});
+    }
+}
+
+module.exports = {movie,dress,games,dressdata};
