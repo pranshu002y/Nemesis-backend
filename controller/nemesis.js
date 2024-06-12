@@ -50,6 +50,27 @@ const dressdata = async(req,res)=>{
     catch(err){
         res.status(400).json({message: "not able to find data"});
     }
+
 }
 
-module.exports = {movie,dress,games,dressdata};
+const moviedata = async(req,res)=>{
+    try{
+        const mdata = await moviesModel.find({});
+        res.status(200).json(mdata);
+    }
+    catch(err){
+        res.status(400).json({message: "not able to find movie"});
+    }
+}
+
+const gamesdata = async(req,res)=>{
+    try{
+        const gdata = await GamesModel.find({});
+        res.status(200).json(mdata);
+    }
+    catch(err){
+        res.status(400).json({message: "not able to find movie"});
+    }
+}
+
+module.exports = {movie,dress,games,dressdata,moviedata,gamesdata};
